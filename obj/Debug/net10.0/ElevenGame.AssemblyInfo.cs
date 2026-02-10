@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ElevenGame")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3f863db5546c0f8f5bf857373dee60a4597b5d16")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+58d7ec62f8c7606e2409df36979f816dee0bb468")]
 [assembly: System.Reflection.AssemblyProductAttribute("ElevenGame")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ElevenGame")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

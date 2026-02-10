@@ -1,3 +1,4 @@
+//represents and manage a single card in the deck
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -7,9 +8,23 @@ public class Card
 {
     private int value;
     private string suit;
-    public static string[] Suits = {"Clubs", "Hearts", "Diamonds", "Spades"};
-    public static int[] Value = {1,2,3,4,5,6,7,8,9,10,11,12,13};
+    public static string[] Suits = {"❤", "⬥", "♠", "♣"};
+    public static int[] Values = {1,2,3,4,5,6,7,8,9,10,11,12,13};
 
+    public Card(string suit, int value)
+    {
+        this.suit = suit;
+        this.value = value;
+    }
+    public int getValue()
+    {
+        return value;
+    }
+    
+    public string getSuit()
+    {
+        return suit;
+    }
     public string getvalueName() //switch nums to names 1=> A
     {
         switch(value)
@@ -21,17 +36,9 @@ public class Card
             default: return value.ToString();
         }
     }
-    public Card(string suit, int value)
-    {
-        this.suit = suit;
-        this.value = value;
-    }
-    public int getValue()
-    {
-        return value;
-    }
     public override string ToString()
     {
-        return $"{suit} of {value}";
+        return $"{suit}{value}";
     }
+
 }

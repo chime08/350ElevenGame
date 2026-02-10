@@ -3,3 +3,13 @@
 /Users/chime/Desktop/CSC 350H/ElevenGame/obj/Debug/net10.0/ElevenGame.AssemblyInfo.cs
 /Users/chime/Desktop/CSC 350H/ElevenGame/obj/Debug/net10.0/ElevenGame.csproj.CoreCompileInputs.cache
 /Users/chime/Desktop/CSC 350H/ElevenGame/obj/Debug/net10.0/ElevenGame.sourcelink.json
+/Users/chime/Desktop/CSC 350H/ElevenGame/bin/Debug/net10.0/ElevenGame
+/Users/chime/Desktop/CSC 350H/ElevenGame/bin/Debug/net10.0/ElevenGame.deps.json
+/Users/chime/Desktop/CSC 350H/ElevenGame/bin/Debug/net10.0/ElevenGame.runtimeconfig.json
+/Users/chime/Desktop/CSC 350H/ElevenGame/bin/Debug/net10.0/ElevenGame.dll
+/Users/chime/Desktop/CSC 350H/ElevenGame/bin/Debug/net10.0/ElevenGame.pdb
+/Users/chime/Desktop/CSC 350H/ElevenGame/obj/Debug/net10.0/ElevenGame.dll
+/Users/chime/Desktop/CSC 350H/ElevenGame/obj/Debug/net10.0/refint/ElevenGame.dll
+/Users/chime/Desktop/CSC 350H/ElevenGame/obj/Debug/net10.0/ElevenGame.pdb
+/Users/chime/Desktop/CSC 350H/ElevenGame/obj/Debug/net10.0/ElevenGame.genruntimeconfig.cache
+/Users/chime/Desktop/CSC 350H/ElevenGame/obj/Debug/net10.0/ref/ElevenGame.dll
