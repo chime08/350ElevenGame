@@ -29,6 +29,19 @@ Eleven is card game where the player remove cards that eith sums up to 11 or for
 3. Table.cs: Manages the cards displayed on the table with remove() and replaced() methods. Also, displays the table with DisplayTable().
 4. GameController.cs: Controls and game logic with StartGame(), submitSelection(), validateSelection() and checkEndState() methods.
 5. Program.cs: Main entry point for the console application
+
+## Use of AI 🤖
+I primarily used **Claude AI** for AI assistance 
+1. **C# syntax**
+I had to look up for some C# synatx like _"Main(string[] args)"_
+
+2. **Debugging**
+   I was having constant issues with reading inputs.
+_string input = Console.ReadLine();_
+(Converting null literal or possible null value to non-nullable type.)
+I was able to resolve the problem with _string input = Console.ReadLine() ?? "";_
+_??_ operator means "if null, use empty string instead."
+
    
 ## Output Examples
 ### Valid Selection
