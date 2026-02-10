@@ -60,7 +60,7 @@ public class Table
 
     public void DisplayTable()
     {
-        Console.WriteLine("Current cards on Table: ");
+        Console.WriteLine("\nCurrent cards on Table: ");
         for (int i = 0; i < cardsOnTable.Count; i++)
         {
             Console.WriteLine($"[{i}] {cardsOnTable[i]}");

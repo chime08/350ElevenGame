@@ -38,7 +38,7 @@ public class Card
     }
     public override string ToString()
     {
-        return $"{suit}{value}";
+        return $"{suit} {value}";
     }
 
 }
