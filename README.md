@@ -22,6 +22,20 @@ Eleven is card game where the player remove cards that eith sums up to 11 or for
 - Repeat until you win or lose
 - **Win**: All cards are removed from deck and table
 - **Lose**: No legal moves on the rable
----
+
+## Classes 
+1. Card.cs: Represents a single card with value and suit
+2. Deck.cs: Represents and manages the deck of cards with shuffle() and deal() methods
+3. Table.cs: Manages the cards displayed on the table with remove() and replaced() methods. Also, displays the table with DisplayTable().
+4. GameController.cs: Controls and game logic with StartGame(), submitSelection(), validateSelection() and checkEndState() methods.
+5. Program.cs: Main entry point for the console application
+   
+## Output Examples
+### Valid Selection
+<img width="1512" height="982" alt="Screenshot 2026-02-10 at 12 42 42 AM" src="https://github.com/user-attachments/assets/429f2c9d-b4bb-4f5a-adb6-eb69d7fe5f67" />
+
+## Invalid Selection 
+<img width="550" height="580" alt="Screenshot 2026-02-10 at 12 47 07 AM" src="https://github.com/user-attachments/assets/c55b8196-cfef-4239-964c-ae6b5deb64af" />
+
 Submitted By: Chime Lhamo Gurung 
-  
+
