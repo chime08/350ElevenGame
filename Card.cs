@@ -1,44 +1,53 @@
-//represents and manage a single card in the deck
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Net;
-
-public class Card
+namespace Elevens.Core;
+public enum Suit {Clubs, Diamonds, Hearts, Spades} //enum = read-only constants
+public sealed class Card
 {
-    private int value;
-    private string suit;
-    public static string[] Suits = {"❤", "⬥", "♠", "♣"};
-    public static int[] Values = {1,2,3,4,5,6,7,8,9,10,11,12,13};
-
-    public Card(string suit, int value)
+    //Card's rank and suit are readonly properties because once its created, 
+    // a card's rank and suit can never change 
+    public int Rank{get;} 
+    public Suit Suit{get;} 
+    public Card(int rank, Suit suit) //Constructor 
     {
-        this.suit = suit;
-        this.value = value;
-    }
-    public int getValue()
-    {
-        return value;
-    }
-    
-    public string getSuit()
-    {
-        return suit;
-    }
-    public string getvalueName() //switch nums to names 1=> A
-    {
-        switch(value)
+        if(rank < 1 || rank > 13) //validate card inputs 
         {
-            case 1: return "A";
-            case 11: return "J";
-            case 12: return "Q";
-            case 13: return "K";
-            default: return value.ToString();
+            throw new ArgumentOutOfRangeException(nameof(rank));
+        }
+        Rank = rank;
+        Suit = suit;
+    }
+    public int ValueForEleven //if rank is not between 1-10 then returns 0
+    {
+        get
+        {
+            if (Rank >= 1 && Rank < 10) 
+                return Rank;
+            else 
+                return 0;
         }
     }
-    public override string ToString()
-    {
-        return $"{suit} {value}";
-    }
+    public bool IsJack => Rank == 11;
+    public bool IsQueen => Rank == 12;
+    public bool IsKing => Rank == 13;
 
+    public override string ToString() //Format card 
+    {
+        string r = Rank switch
+        {
+            1 => "A", 
+            11 => "J",
+            12 => "Q", 
+            13 => "K", 
+            _ => Rank.ToString()
+        };
+
+        String suit = Suit switch
+        {
+            Suit.Spades => "♠",
+            Suit.Clubs => "♣",
+            Suit.Hearts => "❤",
+            Suit.Diamonds => "◆", 
+            _ => "?"
+        };
+        return $"{r} {suit}";
+    }
 }
