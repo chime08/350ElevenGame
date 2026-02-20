@@ -1,4 +1,4 @@
-namespace Elevens.Core;
+namespace Elevens.Core; //.Core to organize the project clearly 
 public enum Suit {Clubs, Diamonds, Hearts, Spades} //enum = read-only constants
 public sealed class Card
 {
@@ -48,6 +48,7 @@ public sealed class Card
             Suit.Diamonds => "◆", 
             _ => "?"
         };
-        return $"{r} {suit}";
+
+        return $"{r} {suit}"; 
     }
 }
