@@ -1,70 +1,52 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
+namespace Elevens.Core;
 
-public class Table
+public sealed class Table
 {
-    private List<Card> cardsOnTable = new List<Card>();
-    public void addCard(Card card)
+    private readonly List<Card> _visibleCards = new();
+    private readonly int _maxCards;
+
+    public int MaxCards => _maxCards;
+    public IReadOnlyList<Card> Cards => _visibleCards.AsReadOnly();
+
+    public Table(int maxCards = 9)
     {
-        if (card != null)
+        _maxCards = maxCards;
+    }
+
+    public int Count()
+    {
+        return _visibleCards.Count;
+    }
+
+    public bool IsEmpty()
+    {
+        return _visibleCards.Count == 0;
+    }
+
+    public void AddCard(Card card)
+    {
+        if (_visibleCards.Count >= _maxCards)
+            throw new InvalidOperationException("Table is full");
+        _visibleCards.Add(card);
+    }
+
+    public Card GetCardAt(int index)
+    {
+        if (index < 0 || index >= _visibleCards.Count)
+            throw new ArgumentOutOfRangeException(nameof(index));
+        return _visibleCards[index];
+    }
+
+    public List<Card> GetCardsByIndices(IEnumerable<int> indices)
+    {
+        return indices.Select(i => GetCardAt(i)).ToList();
+    }
+
+    public void RemoveCards(IEnumerable<Card> cards)
+    {
+        foreach (Card card in cards)
         {
-            cardsOnTable.Add(card);
+            _visibleCards.Remove(card);
         }
     }
-
-    public void Remove(List<int> indices)
-    {
-        indices.Sort((a, b) => b.CompareTo(a));
-
-        foreach (int index in indices)
-        {
-            if (index >= 0 && index < cardsOnTable.Count)
-            {
-                cardsOnTable.RemoveAt(index);
-            }
-        }
-    }
-
-    public void Replace(Deck deck, List<int> indices)
-    {
-        Remove(indices);
-        while (cardsOnTable.Count < 9 && !deck.isEmpty())
-        {
-            Card newCard = deck.Deal();
-            if (newCard != null)
-            {
-                cardsOnTable.Add(newCard);
-            }
-        }
-    }
-
-    public List<Card> GetCards()
-    {
-        return cardsOnTable;
-    }
-    public Card GetCard(int index)
-    {
-        if (index >= 0 && index < cardsOnTable.Count)
-        {
-            return cardsOnTable[index];
-        }
-        return null;
-    }
-
-    public int GetCardCount()
-    {
-        return cardsOnTable.Count;
-    }
-
-    public void DisplayTable()
-    {
-        Console.WriteLine("\nCurrent cards on Table: ");
-        for (int i = 0; i < cardsOnTable.Count; i++)
-        {
-            Console.WriteLine($"[{i}] {cardsOnTable[i]}");
-        }
-    }
-
 }
